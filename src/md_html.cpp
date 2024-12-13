@@ -6,8 +6,9 @@
 #include <string>       // Use strings
 #include <fstream>      // Create, write and read files
 
-#include "markdown.hpp" // Markdown parser
+#include "markdown.h" // Markdown parser
 
+enum  { no_argument, required_argument };
 
 int main(int argc, char **argv) {
     int c;

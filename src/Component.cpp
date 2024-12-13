@@ -1,5 +1,5 @@
 #include <string>
-#include "Component.hpp"
+#include "Component.h"
 
 // Default constructor, type of the Component needed (div, tag, code...)
 Component::Component(std::string type){

@@ -1,4 +1,4 @@
-#include "HTML.hpp"
+#include "HTML.h"
 
 // Default constructor, just set the type to "html".
 // There should be no text inside the HTML tags, just subcomponents

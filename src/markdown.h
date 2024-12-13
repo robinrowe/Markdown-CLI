@@ -4,6 +4,6 @@
 #include <fstream>      // Create, write and read files
 #include <regex>        // Unlocks REGEX POWAA
 
-#include "HTML.hpp"
+#include "HTML.h"
 
 std::string markdown(std::string);      // Read from a string, modify the given HTML object

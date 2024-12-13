@@ -7,7 +7,7 @@
 #include <algorithm>    // It does one linear scan of the string and inplace replaces all the matching characters
 #include <utility>
 
-#include "HTML.hpp"
+#include "HTML.h"
 
 struct token {
     std::string rex;    // Regex to find the markdown token
@@ -24,8 +24,8 @@ std::string markdown(std::string markdown){
 
     while (std::regex_search (markdown, match, headers)) {
 
-        int match_begin = match.position();
-        int match_end   = match_begin + match.length();
+        auto match_begin = match.position();
+        auto match_end   = match_begin + match.length();
 
         printf("Processing match: %s", markdown.substr(match_begin, match.length()).c_str());
 
@@ -44,13 +44,13 @@ std::string markdown(std::string markdown){
     std::smatch match2;  // Match object (stores match information)
     while (std::regex_search (markdown, match, links)) {
 
-        int match_begin = match.position();
-        int match_end   = match_begin + match.length();
+        ptrdiff_t match_begin = match.position();
+        ptrdiff_t match_end   = match_begin + match.length();
         
         std::string text = "";
         std::string link = "";
 
-        int i, count;
+        ptrdiff_t i, count;
         for(i = match_begin+1, count = 1; count > 0; i++){
             char c = markdown[i];
 
@@ -90,7 +90,7 @@ std::string markdown(std::string markdown){
         printf("Checking for %s\n", tok.tag.c_str());
         std::regex tmp(tok.rex);
         
-        int match_end, match_begin;
+        ptrdiff_t match_end, match_begin;
         while (std::regex_search (markdown, match, tmp)) {
             match_begin = match.position();
             match_end   = match_begin + match.length();

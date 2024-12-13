@@ -1,7 +1,7 @@
 #pragma once
 #include <string.h>
 #include <list>
-#include "Component.hpp"
+#include "Component.h"
 
 class HTML: public Component{
     private:
