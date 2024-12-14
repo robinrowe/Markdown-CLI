@@ -8,8 +8,6 @@
 
 #include "markdown.h" // Markdown parser
 
-enum  { no_argument, required_argument };
-
 int main(int argc, char **argv) {
     int c;
     std::string styleFile, inputFile, outputFile, stdinMarkdown;
