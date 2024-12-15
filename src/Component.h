@@ -1,3 +1,8 @@
+// Component.h
+
+#ifndef Component_h
+#define Component_h
+
 #include <list>
 #include <string>
 
@@ -24,3 +29,5 @@ class Component{
         std::string getType(){return this->type;}   // Returns the type of this component
         Component* getParent(){return this->parent;}// Returns the parent of this component (unused for the moment)
 };
+
+#endif

@@ -1,17 +1,19 @@
+// md_html.cpp
+
 #include <algorithm>
+#include <string>       // Use strings
 #include <cstring>
 #include <getopt.h>     // GNU's getopt (parse CL arguments)
 #include <stdio.h>      // Standard I/O
 #include <iostream>     // For the std::cin and std::cout. I don't like, but... oh well
-#include <string>       // Use strings
 #include <fstream>      // Create, write and read files
-
 #include "markdown.h" // Markdown parser
+using namespace std;
 
-int main(int argc, char **argv) {
+int main(int argc, char *argv[]) {
     int c;
     std::string styleFile, inputFile, outputFile, stdinMarkdown;
-    bool verbose_flag;
+    bool verbose_flag = false;
 
     while (1) {
         static struct option long_options[] = {

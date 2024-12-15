@@ -3,11 +3,15 @@
 # License Open Source MIT
 
 cmake_minimum_required(VERSION 3.8)
-set(CMAKE_C_STANDARD 23)
+#set(CMAKE_C_STANDARD 23)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MD")
+#cmake_policy(SET CMP0091 NEW) # Enable MSVC_RUNTIME_LIBRARY
+#set(MSVC_RUNTIME_LIBRARY MultiThreadedDLL)
+#set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MDd")
+#set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MD")
 
 project(Markdown-CLI)
 message("Configuring ${CMAKE_PROJECT_NAME}...")
@@ -36,33 +40,8 @@ if(UNISTD)
 	endif(WIN32)
 endif(UNISTD)
 
-option(FLTK "Enable FLTK" false)
-if(FLTK)
-	set(FLTK_PATH /Code/fltk)
-	include_directories(${FLTK_PATH} ${FLTK_PATH}/fltk-build ${FLTK_PATH}/fltk-src/)
-	link_directories(${FLTK_PATH}/fltk-src/build/lib/Debug)
-	set(FLTK_LIBS
-		fltk_formsd
-		fltk_gld
-		fltk_imagesd
-		fltk_jpegd
-		fltk_pngd
-		fltk_zd
-		fltkd
-	)
-	link_libraries(${FLTK_LIBS} comctl32)
-endif(FLTK)
-
-option(GTK1 "Enable GTK1" false)
-if(GTK1)
-	set(GTK_INCLUDE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/gtk1/gtk1win)
-	set(GTK_INCLUDE_DIRS 
-		${GTK_INCLUDE_PATH}
-		${GTK_INCLUDE_PATH}/glib 
-		${GTK_INCLUDE_PATH}/gdk)
-	include_directories(${GTK_INCLUDE_DIRS})
-endif(GTK1)
 file(STRINGS sources.cmake SOURCES)
 add_library(${MODULE_NAME} ${SOURCES})
+#link_libraries(stdc++)
 add_executable(md_html md_html.cpp)
-# target_link_options(md_html PRIVATE "/NODEFAULTLIB:MSVCRT")
+#target_link_options(md_html PRIVATE "/NODEFAULTLIB:MSVCRT")

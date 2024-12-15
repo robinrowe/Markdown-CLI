@@ -1,3 +1,5 @@
+// Component.cpp
+
 #include <string>
 #include "Component.h"
 

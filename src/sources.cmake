@@ -1,4 +1,5 @@
 sources.cmake
+../README.md
 Component.h
 HTML.h
 markdown.h
