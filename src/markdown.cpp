@@ -1,13 +1,9 @@
-#include <sstream>
-#include <stdio.h>      // Standard I/O
-#include <string>       // Use strings
-#include <fstream>      // Create, write and read files
-#include <iostream>     // For the std::cin and std::cout. I don't like, but... oh well
-#include <regex>        // Unlocks REGEX POWAA
-#include <algorithm>    // It does one linear scan of the string and inplace replaces all the matching characters
-#include <utility>
+// markdown.cpp
 
-#include "HTML.h"
+#include <string>
+#include <regex>
+#include <list>  
+#include "markdown.h"
 
 struct token {
     std::string rex;    // Regex to find the markdown token

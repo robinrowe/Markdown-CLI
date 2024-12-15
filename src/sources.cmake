@@ -1,8 +1,8 @@
 sources.cmake
 ../README.md
 Component.h
-HTML.h
-markdown.h
 Component.cpp
-HTML.cpp
+Html.h
+Html.cpp
+markdown.h
 markdown.cpp
